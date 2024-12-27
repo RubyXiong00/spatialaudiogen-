@@ -192,7 +192,7 @@ def main(args):
         cmd = 'ffmpeg -y -ss {} -i {} -t {} {}'.format(args.deploy_start, args.video, args.deploy_duration, tmp_video_fn)
         os.system(cmd)
 
-        myutils.gen_360video(tmp_ambix_fn, tmp_video_fn, args.output_fn, overlay_map=args.overlay_map, inject_meta=args.VR, binauralize=not args.VR)
+        myutils.gen_360_video(tmp_ambix_fn, tmp_video_fn, args.output_fn, overlay_map=args.overlay_map, inject_meta=args.VR, binauralize=not args.VR)
         # 生成360视频，包括声源位置掩膜层
 
         os.remove(tmp_video_fn)
